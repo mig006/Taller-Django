@@ -1,0 +1,27 @@
+{% extends "canciones/base.html" %}
+
+{% block titulo %}Eliminar Canción - MusicApp{% endblock %}
+
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 text-center">
+            <h2 class="text-danger"><i class="bi bi-exclamation-triangle"></i></h2>
+            <h4>¿Eliminar esta canción?</h4>
+            <p class="text-secondary">
+                <strong>{{ cancion.titulo }}</strong> de <strong>{{ cancion.artista }}</strong>
+            </p>
+            <p class="text-secondary small">Esta acción no se puede deshacer.</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-flex justify-content-center gap-2">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Sí, eliminar
+                    </button>
+                    <a href="{% url 'cancion_lista' %}" class="btn btn-outline-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

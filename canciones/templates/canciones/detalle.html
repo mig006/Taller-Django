@@ -1,0 +1,42 @@
+{% extends "canciones/base.html" %}
+
+{% block titulo %}{{ cancion.titulo }} - MusicApp{% endblock %}
+
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card p-4">
+            <h2><i class="bi bi-music-note-beamed"></i> {{ cancion.titulo }}</h2>
+            <hr style="border-color: #333;">
+            <dl class="row mb-0">
+                <dt class="col-sm-4">Artista</dt>
+                <dd class="col-sm-8">{{ cancion.artista }}</dd>
+
+                <dt class="col-sm-4">Álbum</dt>
+                <dd class="col-sm-8">{{ cancion.album|default:"Sin álbum" }}</dd>
+
+                <dt class="col-sm-4">Género</dt>
+                <dd class="col-sm-8"><span class="badge badge-genero">{{ cancion.get_genero_display }}</span></dd>
+
+                <dt class="col-sm-4">Duración</dt>
+                <dd class="col-sm-8">{{ cancion.duracion_formateada }}</dd>
+
+                <dt class="col-sm-4">Fecha de lanzamiento</dt>
+                <dd class="col-sm-8">{{ cancion.fecha_lanzamiento }}</dd>
+            </dl>
+            <hr style="border-color: #333;">
+            <div class="d-flex gap-2">
+                <a href="{% url 'cancion_editar' cancion.pk %}" class="btn btn-outline-warning">
+                    <i class="bi bi-pencil"></i> Editar
+                </a>
+                <a href="{% url 'cancion_eliminar' cancion.pk %}" class="btn btn-outline-danger">
+                    <i class="bi bi-trash"></i> Eliminar
+                </a>
+                <a href="{% url 'cancion_lista' %}" class="btn btn-outline-secondary ms-auto">
+                    <i class="bi bi-arrow-left"></i> Volver
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

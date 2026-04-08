@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}MusicApp{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #121212; color: #e0e0e0; }
+        .navbar { background-color: #1db954 !important; }
+        .navbar-brand { font-weight: bold; color: #fff !important; }
+        .card { background-color: #1e1e1e; border: 1px solid #333; }
+        .card:hover { border-color: #1db954; }
+        .btn-success { background-color: #1db954; border-color: #1db954; }
+        .btn-success:hover { background-color: #1aa34a; border-color: #1aa34a; }
+        .table { color: #e0e0e0; }
+        .table thead { background-color: #1db954; color: #fff; }
+        a { color: #1db954; }
+        a:hover { color: #1aa34a; }
+        .badge-genero { background-color: #1db954; }
+        .form-control, .form-select { background-color: #2a2a2a; color: #e0e0e0; border-color: #444; }
+        .form-control:focus, .form-select:focus { background-color: #333; color: #fff; border-color: #1db954; box-shadow: 0 0 0 0.2rem rgba(29,185,84,0.25); }
+        .form-label, .card h2, .card dt, .card dd, .card p, .card h4 { color: #fff; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'cancion_lista' %}">
+                <i class="bi bi-music-note-beamed"></i> MusicApp
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block contenido %}{% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
