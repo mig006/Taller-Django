@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(ls /c/Python*/python.exe)",
-      "Read(//c/Users/SoySp/AppData/Local/Programs/Python/**)",
-      "Bash(/c/Users/SoySp/AppData/Local/Programs/Python/Python314/python.exe:*)"
-    ]
-  }
-}
